@@ -73,7 +73,7 @@ salon-management/
 
 ## 🛠️ Technologies
 
-- **Frontend :** React 18, Vite, CSS
+- **Frontend :** React 18, Vite, CSS, HTML, JavaScript
 - **Backend :** PHP 8.2, PDO
 - **Base de données :** MySQL (Railway)
 - **Déploiement :** Vercel (frontend) + Railway (backend)
