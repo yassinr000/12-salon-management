@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:white;padding:32px;color:#333}
+
+.sec-title{display:flex;align-items:center;gap:9px;color:#6ca86c;font-size:.95rem;font-weight:600;margin-bottom:18px;margin-top:36px}
+.sec-title::before{content:'';width:5px;height:20px;background:#6ca86c;border-radius:3px;flex-shrink:0}
+
+/* ── WBS ── */
+.wbs-root-row{display:flex;justify-content:center;margin-bottom:0}
+.wbs-root{background:#1e4d3a;color:white;padding:10px 36px;border-radius:8px;font-weight:600;font-size:.88rem}
+.wbs-vline-center{display:flex;justify-content:center}
+.wbs-vline-center div{width:2px;height:24px;background:#bbb}
+.wbs-hbar-wrap{display:flex;justify-content:center}
+.wbs-hbar-inner{position:relative;display:flex;justify-content:space-between;width:780px}
+.wbs-hbar-inner::before{content:'';position:absolute;top:0;left:10%;right:10%;height:2px;background:#bbb}
+.wbs-col{display:flex;flex-direction:column;align-items:center;width:148px}
+.wbs-vstem{width:2px;height:22px;background:#bbb}
+.wbs-parent{padding:8px 10px;border-radius:7px;font-weight:600;font-size:.78rem;color:white;text-align:center;width:138px;white-space:nowrap}
+.wbs-children{display:flex;flex-direction:column;gap:5px;margin-top:5px;align-items:center}
+.wbs-child{background:#3a3a4a;color:#ddd;padding:6px 10px;border-radius:6px;font-size:.72rem;text-align:center;width:138px}
+.c-orange{background:#c07040}
+.c-indigo{background:#4040a0}
+.c-violet{background:#5555bb}
+.c-steel{background:#4070aa}
+.c-slate{background:#505068}
+
+/* ── GANTT ── */
+.gantt-wrap{max-width:760px}
+.gantt{width:100%;border-collapse:collapse;font-size:.9rem;table-layout:fixed}
+.gantt th,.gantt td{padding:4px 5px;border:1px solid #e8e6f5}
+.gantt th{background:#ebe9f8;font-weight:600;color:#554acc;text-align:center;font-size:.84rem}
+.gantt th.col-task{text-align:left;color:#554acc;width:175px}
+.gantt th.col-resp{text-align:left;color:#554acc;width:78px}
+.gantt td.col-task{font-size:.9rem;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gantt td.col-resp{font-size:.84rem;color:#666;white-space:nowrap}
+.gantt td.cell{background:#f9f8ff;padding:2px}
+.bar{display:block;border-radius:20px;padding:2px 0;font-size:.8rem;font-weight:600;color:white;text-align:center;white-space:nowrap}
+.bar.fe{background:#d4734a}
+.bar.be{background:#5544bb}
+.bar.doc{background:#888}
+.bar.ms{background:#2e8b5a}
+.sprint-head td{background:#f0eefa!important;font-weight:600;font-size:.9rem;color:#7040c0;padding:5px 8px;border-top:5px solid white!important}
+.sprint-head.s1 td{color:#c07040}
+.sprint-head.s2 td{color:#4444bb}
+.sh-fe{background:#fff0e8!important;color:#b05820!important}
+.sh-be{background:#eeeaff!important;color:#4433aa!important}
+.legend{display:flex;gap:20px;margin-top:12px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:.86rem;color:#555}
+.ldot{width:16px;height:12px;border-radius:10px}
+</style>
+</head>
+<body>
+
+<!-- WBS -->
+<div class="sec-title">2. WBS – Work Breakdown Structure</div>
+
+<div class="wbs-root-row"><div class="wbs-root">Salon Management System</div></div>
+<div class="wbs-vline-center"><div></div></div>
+<div class="wbs-hbar-wrap">
+  <div class="wbs-hbar-inner">
+
+    <div class="wbs-col">
+      <div class="wbs-vstem"></div>
+      <div class="wbs-parent c-orange">1. Frontend</div>
+      <div class="wbs-children">
+        <div class="wbs-child">Pages React</div>
+        <div class="wbs-child">api.js / CSS</div>
+      </div>
+    </div>
+
+    <div class="wbs-col">
+      <div class="wbs-vstem"></div>
+      <div class="wbs-parent c-indigo">2. BDD</div>
+      <div class="wbs-children">
+        <div class="wbs-child">Schéma SQL</div>
+        <div class="wbs-child">salon_beaute.sql</div>
+      </div>
+    </div>
+
+    <div class="wbs-col">
+      <div class="wbs-vstem"></div>
+      <div class="wbs-parent c-violet">3. Backend</div>
+      <div class="wbs-children">
+        <div class="wbs-child">API PHP/PDO</div>
+        <div class="wbs-child">CORS / config</div>
+      </div>
+    </div>
+
+    <div class="wbs-col">
+      <div class="wbs-vstem"></div>
+      <div class="wbs-parent c-steel">4. DevOps</div>
+      <div class="wbs-children">
+        <div class="wbs-child">Dockerfile</div>
+        <div class="wbs-child">Railway / Vercel</div>
+      </div>
+    </div>
+
+    <div class="wbs-col">
+      <div class="wbs-vstem"></div>
+      <div class="wbs-parent c-slate">5. Docs/QA</div>
+      <div class="wbs-children">
+        <div class="wbs-child">README / docs/</div>
+        <div class="wbs-child">Livrables PDF</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GANTT -->
+<div class="sec-title">3. Diagramme de Gantt – 2 sprints (10 semaines)</div>
+
+<div class="gantt-wrap">
+<table class="gantt">
+  <thead>
+    <tr>
+      <th class="col-task" rowspan="2">Tâche</th>
+      <th class="col-resp" rowspan="2">Resp.</th>
+      <th colspan="5" class="sh-fe">Sprint 1 – Frontend (S1–S5)</th>
+      <th colspan="5" class="sh-be">Sprint 2 – Backend & BDD (S6–S10)</th>
+    </tr>
+    <tr>
+      <th class="sh-fe">S1</th><th class="sh-fe">S2</th><th class="sh-fe">S3</th><th class="sh-fe">S4</th><th class="sh-fe">S5</th>
+      <th class="sh-be">S6</th><th class="sh-be">S7</th><th class="sh-be">S8</th><th class="sh-be">S9</th><th class="sh-be">S10</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr class="sprint-head s1"><td colspan="12">Sprint 1 — Frontend (semaines 1–5)</td></tr>
+
+    <tr>
+      <td class="col-task">Pages React (Home, Dashboard, Bookings…)</td>
+      <td class="col-resp">Karibi</td>
+      <td class="cell" colspan="4"><span class="bar fe">S1–S4</span></td>
+      <td class="cell"></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+    </tr>
+    <tr>
+      <td class="col-task">api.js + appels fetch</td>
+      <td class="col-resp">Karibi</td>
+      <td class="cell"></td>
+      <td class="cell" colspan="3"><span class="bar fe">S2–S4</span></td>
+      <td class="cell"></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+    </tr>
+    <tr>
+      <td class="col-task">README init + structure docs</td>
+      <td class="col-resp">Douaa</td>
+      <td class="cell" colspan="2"><span class="bar doc">S1–S2</span></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+    </tr>
+    <tr>
+      <td class="col-task">Déploiement Vercel (SPA)</td>
+      <td class="col-resp">Karibi</td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"><span class="bar fe">S5</span></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+    </tr>
+
+    <tr class="sprint-head s2"><td colspan="12">Sprint 2 — Backend & BDD (semaines 6–10)</td></tr>
+
+    <tr>
+      <td class="col-task">Schéma BDD MySQL + migrations</td>
+      <td class="col-resp">Yassine</td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell" colspan="2"><span class="bar be">S6–S7</span></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td>
+    </tr>
+    <tr>
+      <td class="col-task">API REST PHP/PDO (4 endpoints)</td>
+      <td class="col-resp">Yassine</td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"></td>
+      <td class="cell" colspan="3"><span class="bar be">S7–S9</span></td>
+      <td class="cell"></td>
+    </tr>
+    <tr>
+      <td class="col-task">Config CORS + middleware</td>
+      <td class="col-resp">Yassine</td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"></td><td class="cell"></td>
+      <td class="cell" colspan="2"><span class="bar be">S8–S9</span></td>
+      <td class="cell"></td>
+    </tr>
+    <tr>
+      <td class="col-task">Dockerfile + déploiement Railway</td>
+      <td class="col-resp">Yassine</td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell" colspan="2"><span class="bar be">S9–S10</span></td>
+    </tr>
+    <tr>
+      <td class="col-task">Intégration API + corrections CORS</td>
+      <td class="col-resp">Karibi / Yassine</td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"></td><td class="cell"></td>
+      <td class="cell" colspan="2"><span class="bar fe">S8–S9</span></td>
+      <td class="cell"></td>
+    </tr>
+    <tr>
+      <td class="col-task">Tests manuels + QA</td>
+      <td class="col-resp">Douaa</td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell" colspan="2"><span class="bar doc">S9–S10</span></td>
+    </tr>
+    <tr>
+      <td class="col-task">Docs finales + livrables PDF</td>
+      <td class="col-resp">Douaa</td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell" colspan="2"><span class="bar doc">S9–S10</span></td>
+    </tr>
+    <tr>
+      <td class="col-task">Livrable final (présentation)</td>
+      <td class="col-resp">Équipe</td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td>
+      <td class="cell"><span class="bar ms">S10</span></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="legend">
+  <div class="legend-item"><div class="ldot" style="background:#d4734a"></div>Frontend (Karibi)</div>
+  <div class="legend-item"><div class="ldot" style="background:#5544bb"></div>Backend (Yassine)</div>
+  <div class="legend-item"><div class="ldot" style="background:#888"></div>Docs/QA (Douaa)</div>
+  <div class="legend-item"><div class="ldot" style="background:#2e8b5a"></div>Milestone</div>
+</div>
+</div>
+
+</body>
+</html>
