@@ -129,7 +129,7 @@ MYSQLPASSWORD=...
 
 ---
 
-## 🚀 Lancer en local
+## 🚀 Commande pour lancer en local
 
 ### Frontend
 ```bash
