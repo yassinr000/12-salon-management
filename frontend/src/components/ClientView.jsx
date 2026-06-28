@@ -30,18 +30,18 @@ function ClientView({ client, onClose, onDelete, onModify }) {
             <h2>Modifier {client.patient}</h2>
             <button className="close-btn2" type="button" onClick={() => setShowModify(false)}>×</button>
           </div>
-          <form className="inline-form" onSubmit={handleSubmit}>
-            <input className="inline-input" type="text"   name="patient" value={form.patient} onChange={handleChange} placeholder="Nom"     required />
-            <input className="inline-input" type="text"   name="numero"  value={form.numero}  onChange={handleChange} placeholder="Numéro" required />
-            <input className="inline-input" type="text"   name="ville"   value={form.ville}   onChange={handleChange} placeholder="Ville"   required />
-            <input className="inline-input" type="text"   name="note"    value={form.note}    onChange={handleChange} placeholder="Note" />
-            <select className="inline-input" name="statut" value={form.statut} onChange={handleChange}>
+          <form className="modify-rdv" onSubmit={handleSubmit}>
+            <input  type="text"   name="patient" value={form.patient} onChange={handleChange} placeholder="Nom"     required />
+            <input  type="text"   name="numero"  value={form.numero}  onChange={handleChange} placeholder="Numéro" required />
+            <input  type="text"   name="ville"   value={form.ville}   onChange={handleChange} placeholder="Ville"   required />
+            <input  type="text"   name="note"    value={form.note}    onChange={handleChange} placeholder="Note" />
+            <select  name="statut" value={form.statut} onChange={handleChange}>
               <option value="actif">Actif</option>
               <option value="innactif">Innactif</option>
             </select>
-            <div className="inline-actions">
-              <button type="button" className="delete-btn" onClick={() => setShowModify(false)}>Annuler</button>
-              <button type="submit" className="modify-btn">Enregistrer</button>
+            <div className="modify-action">
+              <button type="button" className="cancel-btn" onClick={() => setShowModify(false)}>Annuler</button>
+              <button type="submit" className="save-btn">Enregistrer</button>
             </div>
           </form>
         </div>
