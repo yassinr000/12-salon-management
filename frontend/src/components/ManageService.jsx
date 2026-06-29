@@ -23,20 +23,20 @@ function ManageService({ service, onClose, onDelete, onModify }) {
 
   if (showModify) {
     return (
-      <div className="manage-overlay">
-        <div className="manage-modal">
-          <div className="manage-header">
+      <div className="modal-overlay2">
+        <div className="action-modal">
+          <div className="model-header2">
             <h2>Modifier {service.nom}</h2>
-            <button className="close-btn" type="button" onClick={() => setShowModify(false)}>×</button>
+            <button className="close-btn2" type="button" onClick={() => setShowModify(false)}>×</button>
           </div>
-          <form className="inline-form" onSubmit={handleSubmit}>
-            <input className="inline-input" type="text"   name="nom"     value={form.nom}     onChange={handleChange} placeholder="Nom du service" required />
-            <input className="inline-input" type="number" name="prix"    value={form.prix}    onChange={handleChange} placeholder="Prix (MAD)"     required />
-            <input className="inline-input" type="text"   name="employe" value={form.employe} onChange={handleChange} placeholder="Employé"        required />
-            <input className="inline-input" type="number" name="duree"   value={form.duree}   onChange={handleChange} placeholder="Durée (min)"     required />
-            <div className="inline-actions">
-              <button type="button" className="delete-btn" onClick={() => setShowModify(false)}>Annuler</button>
-              <button type="submit" className="modify-btn">Enregistrer</button>
+          <form className="modify-rdv" onSubmit={handleSubmit}>
+            <input type="text"   name="nom"     value={form.nom}     onChange={handleChange} placeholder="Nom du service" required />
+            <input type="number" name="prix"    value={form.prix}    onChange={handleChange} placeholder="Prix (MAD)"     required />
+            <input type="text"   name="employe" value={form.employe} onChange={handleChange} placeholder="Employé"        required />
+            <input type="number" name="duree"   value={form.duree}   onChange={handleChange} placeholder="Durée (min)"     required />
+            <div className="modify-action">
+              <button type="button" className="cancel-btn" onClick={() => setShowModify(false)}>Annuler</button>
+              <button type="submit" className="save-btn">Enregistrer</button>
             </div>
           </form>
         </div>
